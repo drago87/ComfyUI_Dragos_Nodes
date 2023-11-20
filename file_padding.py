@@ -15,7 +15,7 @@ class file_padding:
                 }),
                 "padding": ("INT", {
                     "default": 4,
-                    "min": 0,
+                    "min": 1,
                     "max": 10,
                     "step": 1,
                     "display": "number"
@@ -35,15 +35,19 @@ class file_padding:
             path = path+"/"
         #print("after "+ str(path))
         #print(str(glob.glob(path+"*.png")))
-        if padding > 0:
+        if padding == 1:
         
             lenght = str(len(glob.glob(path+"*.png")))
             return(lenght)
         else:
             lenght = ""
-            for x in padding-1:
+            x = 1
+            while x < padding:
                 lenght = lenght+"0"
+                x+=1
+            print("test " +lenght)
             lenght = lenght + str(len(glob.glob(path+"*.png")))
+            print(lenght)
             return(lenght)
      
 NODE_CLASS_MAPPINGS = {
