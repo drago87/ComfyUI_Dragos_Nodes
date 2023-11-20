@@ -38,7 +38,7 @@ class file_padding:
         if padding == 1:
         
             lenght = str(len(glob.glob(path+"*.png")))
-            return(lenght)
+            return(lenght,)
         else:
             lenght = ""
             x = 1
@@ -48,7 +48,7 @@ class file_padding:
             print("test " +lenght)
             lenght = lenght + str(len(glob.glob(path+"*.png")))
             print(lenght)
-            return(lenght)
+            return(lenght,)
      
 NODE_CLASS_MAPPINGS = {
     "file_padding": file_padding
