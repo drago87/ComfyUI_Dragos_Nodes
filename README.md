@@ -6,6 +6,8 @@ A node that checks a folder and returns a padded string depending on the .png fi
 
 An exaple is you have a folder with 3 .png files in it and you have set the padding to 4 it will give you a string "0003"
 
+If using [Pinokio](https://pinokio.computer/) you may need to change the `./ComfyUI/output/` to `./output/`
+
 ![image](https://github.com/drago87/ComfyUI_Dragos_Nodes/assets/6805712/b646833a-6cf3-4171-9c21-fca24a6fba49)
 
 # VAE Loader with Name output
