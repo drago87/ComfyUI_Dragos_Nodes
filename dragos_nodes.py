@@ -136,6 +136,7 @@ class image_info:
                 "height": ("INT",{
                     "forceInput": True
                 }),
+                "top": ("BOOLEAN", {"default": True, "label_on": "Top", "label_off": "Bottom"}),
                 "info": ("INFO",{"forceInput": True})
             },
             "optional": {
@@ -158,20 +159,29 @@ class image_info:
     
     CATEGORY = "DragosNodes"
     
-    def run(self, checkpoint_name,  posetive, negative, width, height, info, vae_name=None, lora_list=None, extra_info_input=None , manual_input=None):
+    def run(self, checkpoint_name,  posetive, negative, width, height, info, top, vae_name=None, lora_list=None, extra_info_input=None , manual_input=None):
     
-        text_string = "nothing here"
-        
-        
-        text_string = ''.join(make_comment(checkpoint_name, posetive, negative, width, height,vae_name, lora_list, info))
-        #print(text_string)
         a = str(extra_info_input)
         b = str(manual_input)
+        text_string = "nothing here"
+        
+        if top == True:
+            if b != "":
+                text_string = "Manual input: "+ b + "\n\n"
+                temp = ''.join(make_comment(checkpoint_name, posetive, negative, width, height,vae_name, lora_list, info))
+                text_string = text_string + temp
+            else:
+                text_string = ''.join(make_comment(checkpoint_name, posetive, negative, width, height,vae_name, lora_list, info))
+        else:
+            text_string = ''.join(make_comment(checkpoint_name, posetive, negative, width, height,vae_name, lora_list, info))
+        #print(text_string)
+        
         #print("\na=:"+ a +"\nb=:"+b)
 
         #print(str(manual_input))
-        if b != "":
-            text_string = text_string + "\n\n"+"Manual input: "+ b
+        if top == False:
+            if b != "":
+                text_string = text_string + "\n\n"+"Manual input: "+ b
         if a != "None":
             text_string = text_string + "\n\n" + a
         
@@ -205,15 +215,58 @@ class vae_loader:
         new_vae_name = new_vae_name.replace(".pt","")
         #print(new_vae_name)
         return (vae,new_vae_name)
+    
+class lora_loader:
+    def __init__(self):
+        self.loaded_lora = None
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {"required": { "model": ("MODEL",),
+                              "clip": ("CLIP", ),
+                              "lora_name": (comfy_paths.get_filename_list("loras"), ),
+                              "strength_model": ("FLOAT", {"default": 1.0, "min": -20.0, "max": 20.0, "step": 0.01}),
+                              "strength_clip": ("FLOAT", {"default": 1.0, "min": -20.0, "max": 20.0, "step": 0.01}),
+                              }}
+    RETURN_TYPES = ("MODEL", "CLIP", "STRING", "STRING", "STRING")
+    RETURN_NAMES = ("MODEL", "CLIP","lora_name", "strength_model", "strength_clip")
+    FUNCTION = "load_lora"
+
+    CATEGORY = "DragosNodes"
+
+    def load_lora(self, model, clip, lora_name, strength_model, strength_clip):
+        if strength_model == 0 and strength_clip == 0:
+            return (model, clip)
+
+        lora_path = comfy_paths.get_full_path("loras", lora_name)
+        lora = None
+        if self.loaded_lora is not None:
+            if self.loaded_lora[0] == lora_path:
+                lora = self.loaded_lora[1]
+            else:
+                temp = self.loaded_lora
+                self.loaded_lora = None
+                del temp
+
+        if lora is None:
+            lora = comfy.utils.load_torch_file(lora_path, safe_load=True)
+            self.loaded_lora = (lora_path, lora)
+
+        model_lora, clip_lora = comfy.sd.load_lora_for_models(model, clip, lora, strength_model, strength_clip)
+        return_lora_name = lora_name.replace(".safetensors","")
+        return (model_lora, clip_lora,return_lora_name,str(strength_model),str(strength_clip))
+
         
 NODE_CLASS_MAPPINGS = {
     "file_padding": file_padding,
     "image_info": image_info,
-    "vae_loader": vae_loader
+    "vae_loader": vae_loader,
+    "lora_loader": lora_loader
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "file_padding": "File Padding",
     "image_info": "Image Info",
-    "vae_loader": "VAE Loader With Name"
+    "vae_loader": "VAE Loader With Name",
+    "lora_loader": "Lora Loader with info"
 }
