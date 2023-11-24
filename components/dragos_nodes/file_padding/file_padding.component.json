@@ -1,6 +1,6 @@
 {
-  "last_node_id": 141,
-  "last_link_id": 147,
+  "last_node_id": 143,
+  "last_link_id": 151,
   "nodes": [
     {
       "id": 124,
@@ -155,7 +155,7 @@
         {
           "name": "text_a",
           "type": "STRING",
-          "link": 140,
+          "link": 151,
           "widget": {
             "name": "text_a",
             "config": [
@@ -186,7 +186,7 @@
         {
           "name": "text_c",
           "type": "STRING",
-          "link": 141,
+          "link": 149,
           "widget": {
             "name": "text_c",
             "config": [
@@ -442,72 +442,6 @@
       ]
     },
     {
-      "id": 122,
-      "type": "Text String",
-      "pos": [
-        190,
-        514
-      ],
-      "size": {
-        "0": 315,
-        "1": 190
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            99
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            103,
-            109,
-            135
-          ],
-          "shape": 3,
-          "slot_index": 1
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            131
-          ],
-          "shape": 3,
-          "slot_index": 2
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            139
-          ],
-          "shape": 3,
-          "slot_index": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Text String"
-      },
-      "widgets_values": [
-        "x",
-        "/",
-        "_",
-        ""
-      ]
-    },
-    {
       "id": 108,
       "type": "ComponentInput",
       "pos": [
@@ -519,7 +453,7 @@
         "1": 26
       },
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "outputs": [
         {
@@ -547,7 +481,7 @@
         "1": 26
       },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -563,170 +497,6 @@
       ],
       "title": "2.File Name",
       "properties": {}
-    },
-    {
-      "id": 135,
-      "type": "ComponentInput",
-      "pos": [
-        -413,
-        379
-      ],
-      "size": {
-        "0": 178,
-        "1": 26
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "links": [
-            142
-          ],
-          "label": "Image Width"
-        }
-      ],
-      "title": "3.Component Input",
-      "properties": {}
-    },
-    {
-      "id": 139,
-      "type": "ComponentInput",
-      "pos": [
-        -419,
-        483
-      ],
-      "size": {
-        "0": 178,
-        "1": 26
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "links": [
-            143
-          ],
-          "label": "Image Height"
-        }
-      ],
-      "title": "4.Component Input",
-      "properties": {}
-    },
-    {
-      "id": 138,
-      "type": "JWIntegerToString",
-      "pos": [
-        -114,
-        430
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "link": 143,
-          "widget": {
-            "name": "value",
-            "config": [
-              "INT",
-              {
-                "default": 0,
-                "min": -18446744073709552000,
-                "max": 18446744073709552000
-              }
-            ]
-          },
-          "slot_index": 0,
-          "label": "height"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            141
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "JWIntegerToString"
-      },
-      "widgets_values": [
-        0,
-        "{:03d}"
-      ]
-    },
-    {
-      "id": 136,
-      "type": "JWIntegerToString",
-      "pos": [
-        -117,
-        391
-      ],
-      "size": {
-        "0": 315,
-        "1": 82
-      },
-      "flags": {
-        "collapsed": true
-      },
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "INT",
-          "link": 142,
-          "widget": {
-            "name": "value",
-            "config": [
-              "INT",
-              {
-                "default": 0,
-                "min": -18446744073709552000,
-                "max": 18446744073709552000
-              }
-            ]
-          },
-          "slot_index": 0,
-          "label": "width"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            140
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "JWIntegerToString"
-      },
-      "widgets_values": [
-        0,
-        "{:03d}"
-      ]
     },
     {
       "id": 126,
@@ -838,10 +608,10 @@
         1043,
         884
       ],
-      "size": [
-        330,
-        102
-      ],
+      "size": {
+        "0": 330,
+        "1": 102
+      },
       "flags": {},
       "order": 13,
       "mode": 0,
@@ -909,7 +679,7 @@
         "1": 26
       },
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -1023,6 +793,232 @@
       ],
       "title": "9.Component Output",
       "properties": {}
+    },
+    {
+      "id": 122,
+      "type": "Text String",
+      "pos": [
+        190,
+        514
+      ],
+      "size": {
+        "0": 315,
+        "1": 190
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            103,
+            109,
+            135
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            131
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            139
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Text String"
+      },
+      "widgets_values": [
+        "x",
+        "/",
+        "_",
+        ""
+      ]
+    },
+    {
+      "id": 139,
+      "type": "ComponentInput",
+      "pos": [
+        -419,
+        483
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            148
+          ],
+          "label": "Image Height",
+          "slot_index": 0
+        }
+      ],
+      "title": "4.Component Input",
+      "properties": {}
+    },
+    {
+      "id": 142,
+      "type": "Int To Number (mtb)",
+      "pos": [
+        -156,
+        496
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "link": 148,
+          "widget": {
+            "name": "int",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": -1000000000,
+                "max": 1000000000,
+                "step": 1,
+                "forceInput": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NUMBER",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": [
+            149
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Int To Number (mtb)"
+      },
+      "widgets_values": [
+        0
+      ]
+    },
+    {
+      "id": 135,
+      "type": "ComponentInput",
+      "pos": [
+        -413,
+        379
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "value",
+          "type": "INT",
+          "links": [
+            150
+          ],
+          "label": "Image Width",
+          "slot_index": 0
+        }
+      ],
+      "title": "3.Component Input",
+      "properties": {}
+    },
+    {
+      "id": 143,
+      "type": "Int To Number (mtb)",
+      "pos": [
+        -151,
+        382
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int",
+          "type": "INT",
+          "link": 150,
+          "widget": {
+            "name": "int",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": -1000000000,
+                "max": 1000000000,
+                "step": 1,
+                "forceInput": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "NUMBER",
+          "type": "FLOAT,INT,NUMBER,STRING",
+          "links": [
+            151
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Int To Number (mtb)"
+      },
+      "widgets_values": [
+        0
+      ]
     }
   ],
   "links": [
@@ -1155,38 +1151,6 @@
       "STRING"
     ],
     [
-      140,
-      136,
-      0,
-      123,
-      0,
-      "STRING"
-    ],
-    [
-      141,
-      138,
-      0,
-      123,
-      2,
-      "STRING"
-    ],
-    [
-      142,
-      135,
-      0,
-      136,
-      0,
-      "INT"
-    ],
-    [
-      143,
-      139,
-      0,
-      138,
-      0,
-      "INT"
-    ],
-    [
       144,
       126,
       0,
@@ -1217,6 +1181,38 @@
       134,
       0,
       "LATENT"
+    ],
+    [
+      148,
+      139,
+      0,
+      142,
+      0,
+      "INT"
+    ],
+    [
+      149,
+      142,
+      0,
+      123,
+      2,
+      "STRING"
+    ],
+    [
+      150,
+      135,
+      0,
+      143,
+      0,
+      "INT"
+    ],
+    [
+      151,
+      143,
+      0,
+      123,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],
@@ -1272,7 +1268,7 @@
     "123": {
       "inputs": {
         "text_a": [
-          "136",
+          "143",
           0
         ],
         "text_b": [
@@ -1281,7 +1277,7 @@
         ],
         "linebreak_addition": "false",
         "text_c": [
-          "138",
+          "142",
           0
         ],
         "delimiter": ""
@@ -1385,26 +1381,6 @@
     "135": {
       "inputs": {}
     },
-    "136": {
-      "inputs": {
-        "value": [
-          "135",
-          0
-        ],
-        "format_string": "{:03d}"
-      },
-      "class_type": "JWIntegerToString"
-    },
-    "138": {
-      "inputs": {
-        "value": [
-          "139",
-          0
-        ],
-        "format_string": "{:03d}"
-      },
-      "class_type": "JWIntegerToString"
-    },
     "139": {
       "inputs": {}
     },
@@ -1418,6 +1394,24 @@
     },
     "141": {
       "inputs": {}
+    },
+    "142": {
+      "inputs": {
+        "int": [
+          "139",
+          0
+        ]
+      },
+      "class_type": "Int To Number (mtb)"
+    },
+    "143": {
+      "inputs": {
+        "int": [
+          "135",
+          0
+        ]
+      },
+      "class_type": "Int To Number (mtb)"
     }
   }
 }
